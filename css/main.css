@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vh + 1vw);
+  --text: #e7e7e0;
+  --transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+}
+
+@font-face {
+  font-family: raleway_f;
+  src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+  font-family: raleway_f;
+  src: url(../fonts/raleway-regular.woff2);
+  font-weight: 900;
+}
+
+body {
+  font-family: raleway_f, sans-serif;
+  line-height: 1.55;
+  background-color: #010101;
+  color: var(--text);
+}
+
+.header_container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header_content {
+  z-index: 1;
+}
+
+.layers {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.layer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transition: var(--transition);
+}
+
+.base_layer {
+  transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+  z-index: 0;
+}
+
+.middle_layer {
+  transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.front_layer {
+  transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+
+.main_article_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
