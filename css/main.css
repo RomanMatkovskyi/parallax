@@ -70,7 +70,7 @@ body {
 .header_subtitle {
   font-size: calc(var(--index) / 1.175);
   letter-spacing: calc(var(--index) / 3.5);
-  margin-top: calc(var(--index) * -0.75);
+  margin-top: calc(var(--index) * -0.25);
   text-shadow: 0 0 15px #9d822b;
   text-transform: uppercase;
   font-weight: 900;
@@ -114,8 +114,25 @@ body {
   width: 100vw;
   min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background-image: url(../img/dungeon.jpg);
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.article_title {
+  margin-bottom: calc(var(--index) * 0.25);
+  font-size: calc(var(--index) * 1.5);
+  letter-spacing: calc(var(--index) / 1.5);
+  text-shadow: 0 0 15px #9d822b;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.article_text {
+  color: var(--text);
+  max-width: calc(var(--index) * 40);
+  font-size: calc(var(--index) * 1.3);
 }
