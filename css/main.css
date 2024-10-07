@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: raleway_f;
-  src: url(../fonts/raleway-regular.woff2);
+  src: url(../fonts/raleway-black.woff2);
   font-weight: 900;
 }
 
@@ -32,13 +32,48 @@ body {
   position: relative;
   height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+.header_container::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  background-image: url(../img/ground.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: calc(var(--index) * 10);
+  bottom: calc(var(--index) * -4.5);
+}
+
 .header_content {
+  margin-top: 30vh;
   z-index: 1;
+  will-change: transform;
+  transition: var(--transition);
+  transform: translate3d(0, calc(var(--scrollTop) / 1.5), 0);
+}
+
+.header_title {
+  font-size: calc(var(--index) * 2);
+  letter-spacing: calc(var(--index) / 1.5);
+  text-shadow: 0 0 15px #9d822b;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.header_subtitle {
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.5);
+  margin-top: calc(var(--index) * -0.75);
+  text-shadow: 0 0 15px #9d822b;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 .layers {
@@ -46,7 +81,6 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -77,11 +111,11 @@ body {
 }
 
 .main_article_content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(../img/dungeon.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
 }

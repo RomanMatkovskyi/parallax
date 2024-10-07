@@ -1,3 +1,6 @@
 window.addEventListener("scroll", (e) => {
-  document.documentElement.style.setProperty("--scrollTop", window.scrollY);
+  document.documentElement.style.setProperty(
+    "--scrollTop",
+    `${this.scrollY}px`
+  );
 });
